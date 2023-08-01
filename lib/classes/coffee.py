@@ -20,7 +20,8 @@ class Coffee:
         return [order for order in Order.all if order.coffee == self]
 
     def customer(self):
-        pass
+        return [*set([order.customer for order in self.orders()])]
+    #returns a unique list of all customers
 
     def num_orders(self):
         pass
@@ -28,7 +29,7 @@ class Coffee:
     def average_price(self):
         pass
 
-    
+
 # class Coffee:
 #     def __init__(self, name):
 #         self.name = name
