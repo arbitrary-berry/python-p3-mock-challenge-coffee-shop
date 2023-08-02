@@ -11,14 +11,14 @@ class Order:
 
     @property
     def price(self):
-        return self.price
-    
+        return self._price
+
     @price.setter
     def price(self, value):
         if type(value) in (int, float) and 1 <= value <= 10:
             self._price = value
         else:
-            raise Exception("Price invalid")
+            raise Exception("price invalid")
 
     @property
     def customer(self):
@@ -27,6 +27,7 @@ class Order:
     @customer.setter
     def customer(self, customer):
         from classes.customer import Customer
+
         if isinstance(customer, Customer):
             self._customer = customer
         else:
@@ -40,6 +41,7 @@ class Order:
     @coffee.setter
     def coffee(self, value):
         from classes.coffee import Coffee
+        
         if isinstance(value, Coffee):
             self._coffee = value
         else:
